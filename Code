@@ -1,0 +1,34 @@
+import java.util.Arrays;
+
+public class LabProgram {
+
+	public static int[] removeEvens(int [] nums) {
+	   /* Code Here */
+	   int j = 0;
+	   
+		for (int i = 0; i < nums.length; i++) {
+		   if (nums[i] % 2 != 0) {
+		      j++;
+		   }
+		}
+		int[] oddOnly = new int[j];
+		int b = 0;
+		
+		for (int i = 0; i < nums.length; i++) {
+		   if (nums[i] % 2 != 0) {
+		   oddOnly[b] = nums[i];
+		   b++;
+		   }
+		}
+		return oddOnly;
+	}
+
+	public static void main(String[] args) {
+
+		int [] input = {1,2,3,4,5,6,7,8,9};
+		int [] result = removeEvens(input);
+
+		// Helper method Arrays.toString() converts int[] to a String
+		System.out.println(Arrays.toString(result)); // Should print [1, 3, 5, 7, 9]
+	}
+}
